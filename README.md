@@ -33,4 +33,5 @@ The input should be DMR, GWAS summary statistics and model file, output should b
 You can download the DMR from the supplementary files of this paper as input.
 
 
-
+# Setup anvil
+link: https://www.rcac.purdue.edu/knowledge/anvil/access/login/sshkeys
