@@ -35,3 +35,13 @@ You can download the DMR from the supplementary files of this paper as input.
 
 # Setup anvil
 link: https://www.rcac.purdue.edu/knowledge/anvil/access/login/sshkeys
+
+
+# example code
+```python
+import os,sys
+import matplotlib.pylab as plt
+
+
+print("..")
+```
