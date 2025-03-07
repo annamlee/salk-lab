@@ -12,15 +12,23 @@ chrom   start   end ID
 Download CpG islands:
 1. Head to http://genome.ucsc.edu/cgi-bin/hgTables
 2. Select the following options:
-    * Genome: Human
-    * Assembly: GRCh38/hg38
-    * Group: Regulation
-    * Track: CpG Islands
-    * Table: cpgIslandExt
-    * Region: Genome
-    * Output format: BED - browser extensible data
-3. Click "get Output" and "get BED"
-4. Save the file as a TSV
+    * **Genome:** Human
+    * **Assembly:** GRCh38/hg38
+    * **Group:** Regulation
+    * **Track:** CpG Islands
+    * **Table:** cpgIslandExt
+    * **Region:** Genome
+    * **Output format:** Selected fields from primary and related tables
+    * **Output filename:** CpG_Island
+    * **Output field separator:** tsv (tab-separated)
+    * **File type returned:** Plain text
+3. Click "Get Output"
+4. Select the following fields:
+    * chrom
+    * chromStart
+    * chromEnd
+    * cpgNum
+6. Click "Get Output"
 
 ## Task 2: Fig 1E
 We may need to plot the same figure (Fig 1E) on our own dataset. So, please read the method and figure out how to plot this kind of figure and prepare the code. The input file will be given as bigwig format.
