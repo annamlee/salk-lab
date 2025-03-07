@@ -9,7 +9,7 @@ Following method part "Annotation and external data", download and prepare the C
 Expected format (separated by tab):
 chrom   start   end ID
 
-Download CpG islands:
+Download & Format CpG islands:
 1. Head to http://genome.ucsc.edu/cgi-bin/hgTables
 2. Select the following options:
     * **Genome:** Human
@@ -29,6 +29,22 @@ Download CpG islands:
     * chromEnd
     * cpgNum
 6. Click "Get Output"
+7. Run following Python script to format file
+``` python
+import pandas as pd
+
+df = pd.read_csv("CpG_Island", sep="\t")
+
+df = df.rename(columns={"#chrom" : "chrom", "chromStart" : "start", "chromEnd" : "end"})
+
+df["ID"] = df["chrom"] + ":" + df["start"].astype(str) + "-" + df["end"].astype(str)
+
+df["strand"] = "+"
+
+df = df[["chrom", "start", "end", "ID", "cpgNum", "strand"]]
+
+df.to_csv("CpG_Island", sep="\t", index=False)
+```
 
 ## Task 2: Fig 1E
 We may need to plot the same figure (Fig 1E) on our own dataset. So, please read the method and figure out how to plot this kind of figure and prepare the code. The input file will be given as bigwig format.
